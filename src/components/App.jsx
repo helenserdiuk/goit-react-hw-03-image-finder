@@ -85,7 +85,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Searchbar onSubmit={handleFormSubmit} />
-        {!error && <ImageGallery items={items} onClick={showModal} />}
+        {!error && <ImageGallery items={items} onClick={this.showModal} />}
         {loading && <Loader />}
         {!loading && items.length >= 12 && <Button onClick={loadMore} />}
         {showModal && (
