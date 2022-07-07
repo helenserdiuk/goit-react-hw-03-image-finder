@@ -87,7 +87,9 @@ export default class App extends Component {
         <Searchbar onSubmit={handleFormSubmit} />
         {!error && <ImageGallery items={items} onClick={this.showModal} />}
         {loading && <Loader />}
-        {!loading && items.length >= 12 && <Button onClick={loadMore} />}
+        {!loading && items.length >= 12 && (
+          <Button onClick={loadMore} title="Load more" />
+        )}
         {showModal && (
           <Modal onClose={closeModal}>
             <img src={modalContent.src} alt={modalContent.alt} />
